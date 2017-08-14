@@ -16,7 +16,7 @@ android {
             cmake {
                 cppFlags ""
                 arguments '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
-                abiFilters "armeabi", "armeabi-v7a"
+                abiFilters "armeabi"
             }
         }
     }

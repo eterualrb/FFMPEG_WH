@@ -2,7 +2,6 @@
 #include <android/log.h>
 
 #include "libavformat/avformat.h"
-#include "libavcodec/avcodec.h"
 #include "libswscale/swscale.h"
 
 #define LOGI(FORMAT, ...) __android_log_print(ANDROID_LOG_INFO,"video_decode",FORMAT,##__VA_ARGS__)
@@ -89,7 +88,7 @@ Java_wh_videodecode_VideoDecode_decode(JNIEnv *env, jclass type, jstring inPath_
             avpicture_get_size(AV_PIX_FMT_YUV420P, pAVCodecContext->width,
                                pAVCodecContext->height));
     // 初始化缓冲区
-    avpicture_fill((AVPicture *) pAVFrame, out_buffer, AV_PIX_FMT_YUV420P, pAVCodecContext->width,
+    avpicture_fill((AVPicture *) pScaleAVFrame, out_buffer, AV_PIX_FMT_YUV420P, pAVCodecContext->width,
                    pAVCodecContext->height);
 
     // 配置转码缩放信息，提供给sws_scale()方法使用
@@ -110,10 +109,10 @@ Java_wh_videodecode_VideoDecode_decode(JNIEnv *env, jclass type, jstring inPath_
 
     // 循环读取压缩数据进行解压缩
     while (0 == av_read_frame(pAVFormatContext, pAVPacket)) {
-//        LOGI("decode frame count : %d", ++frame_count);
+        LOGI("decode frame count : %d", ++frame_count);
 
         int stream_index = pAVPacket->stream_index;
-//        LOGI("packet stream index : %d", stream_index);
+        LOGI("packet stream index : %d", stream_index);
 
         // 如果是视频流
         if (video_stream_index == stream_index) {

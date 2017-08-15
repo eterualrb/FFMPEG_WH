@@ -138,7 +138,7 @@ Java_wh_videodecode_VideoDecode_decode(JNIEnv *env, jclass type, jstring inPath_
             }
         }
 
-        //释放资源
+        // 清空AVPacket中的数据，防止下次填充AVPacket后使用到它里面的脏数据
         av_free_packet(pAVPacket);
     }
 

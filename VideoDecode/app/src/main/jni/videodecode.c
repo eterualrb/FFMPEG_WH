@@ -147,6 +147,7 @@ Java_wh_videodecode_VideoDecode_decode(JNIEnv *env, jclass type, jstring inPath_
 
     av_frame_free(&pScaleAVFrame);
     av_frame_free(&pAVFrame);
+    av_free(pAVPacket);
 
     avcodec_close(pAVCodecContext);
 

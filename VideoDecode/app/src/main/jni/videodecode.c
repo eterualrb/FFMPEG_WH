@@ -145,12 +145,14 @@ Java_wh_videodecode_VideoDecode_decode(JNIEnv *env, jclass type, jstring inPath_
     fflush(out_file);
     fclose(out_file);
 
+    // 释放资源
     av_frame_free(&pScaleAVFrame);
     av_frame_free(&pAVFrame);
     av_free(pAVPacket);
 
     avcodec_close(pAVCodecContext);
 
+    avformat_close_input(&pAVFormatContext);
     avformat_free_context(pAVFormatContext);
 
     (*env)->ReleaseStringUTFChars(env, inPath_, inPath);

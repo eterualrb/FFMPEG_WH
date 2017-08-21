@@ -142,6 +142,8 @@ Java_wh_audiodecode_AudioDecode_decode(JNIEnv *env, jclass type, jstring inPath_
     fclose(out_file);
 
     // 释放资源
+    swr_free(&pSwrContext);
+
     av_free(out_buffer);
 
     av_frame_free(&pAVFrame);

@@ -12,8 +12,8 @@ public class MainActivity extends AppCompatActivity {
 
     private final String TAG = "audio_play";
 
-//        private final String inFileName = "000_wh" + File.separator + "test.mp3";
-    private final String inFileName = "000_wh" + File.separator + "input.mp4";
+    private final String inFileName = "000_wh" + File.separator + "test.mp3";
+//    private final String inFileName = "000_wh" + File.separator + "input.mp4";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

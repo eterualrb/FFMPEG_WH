@@ -33,3 +33,33 @@
 * 使用Android API的AudioTrack来播放解码后的pcm数据
 * 具体测试结果请运行demo
 
+## 6. easyPlayer - [FFmpeg 音视频同步](http://www.jianshu.com/p/27279255f67e)
+
+* 这部分内容是参考别人的blog[FFmpeg 音视频同步](http://www.jianshu.com/p/27279255f67e)完成的
+* 音视频解码多线程处理，使用生产者消费者模式来处理同步问题
+* OpenSL ES进行音频数据播放
+* 具体测试结果请运行demo
+
+## 7. 其它音视频内容总结
+
+* openSL-ES-study
+
+  * android平台下使用OpenSL ES播放PCM数据
+
+
+  * blog地址：[Android OpenSL ES播放PCM数据](https://eterualrb.github.io/2017/03/26/Android-OpenSL-ES%E6%92%AD%E6%94%BEwav%E6%96%87%E4%BB%B6/)
+  * code地址：https://github.com/eterualrb/openSL-ES-study
+
+* WHLive
+
+  * android native层进行音视频推流
+
+
+  * blog地址：[Android直播 native层音视频推流](https://eterualrb.github.io/2017/07/02/Android%E7%9B%B4%E6%92%AD-native%E5%B1%82%E9%9F%B3%E8%A7%86%E9%A2%91%E6%8E%A8%E6%B5%81/)
+  * code地址：https://github.com/eterualrb/LIVE_WH
+
+* Simple_H264_Analyzer
+
+  * H.264视频码流解析
+  * code地址：https://github.com/eterualrb/Simple_H264_Analyzer
+
